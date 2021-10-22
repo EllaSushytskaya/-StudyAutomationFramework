@@ -20,7 +20,6 @@ public class MainWiki {
 		searchField.sendKeys("Banana");
 		searchField.sendKeys(Keys.ENTER);
 
-
 		driver.close();
 	}
 }
