@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="OpenThirdPageTest test">
+    <test name="OpenThirdPageTest">
+        <packages>
+            <package name="com.stormnet.lesson5.tests"/>
+        </packages>
+    </test>
+</suite>
