@@ -5,6 +5,7 @@ import common.driver.UiDriver;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import padeWrappers_Yandex_ru.formMail.FormMailHelper;
 import padeWrappers_Yandex_ru.landingPage.WriteMailHelper;
 import padeWrappers_Yandex_ru.loginPage.LoginFormHelper;
 
@@ -31,6 +32,10 @@ public class LoginPageTest extends AbstractTest {
 		WriteMailHelper.waitUntilOpenedFormMail();
 		WriteMailHelper.openMail();
 
+		FormMailHelper.fillEmail("ella.sushitskaya@yandex.by");
+		FormMailHelper.fillSubject("test");
+		FormMailHelper.fillText("test");
+		FormMailHelper.sendMail();
 
 
 
