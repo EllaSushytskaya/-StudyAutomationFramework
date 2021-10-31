@@ -12,16 +12,15 @@ public class LoginPageTest extends AbstractTest {
 
 	@BeforeMethod
 	public void openPage() {
-		UiDriver.getDriver().get("https://disk.yandex.by/");
+		UiDriver.getDriver().get("https://mail.yandex.by/");
 	}
 
 
-	@Test(testName = "Login with right credentials")
+	@Test
 	@Story("LG_001")
 	public void loginTestRightCredentials()  {
 
-
-		LoginFormHelper.submitSite();
+		LoginFormHelper.openMail();
 		LoginFormHelper.fillUsername("ella.sushitskaya");
 		LoginFormHelper.submitForm();
 		LoginFormHelper.waitUntilOpened();

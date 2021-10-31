@@ -8,9 +8,10 @@ import static common.driver.UiDriver.getDriver;
 
 public class LoginFormHelper {
 
-	public static void submitSite(){
-		LoginForm.getSignOpen().click();
+	public static void openMail(){
+		LoginForm.getOpenMail().click();
 	}
+
 
 	public static void fillUsername(String username) {
 		LoginForm.getUserNameField().sendKeys(username);
@@ -37,10 +38,7 @@ public class LoginFormHelper {
 				.until(ExpectedConditions.visibilityOfElementLocated(LoginForm.getUserNameField().getLocator()));
 	}
 }
-//	public static void loginWithCreds(String userName, String password) {
-//		fillUsername(userName);
-//		fillPassword(password);
-//		submitForm();
+
 
 
 
