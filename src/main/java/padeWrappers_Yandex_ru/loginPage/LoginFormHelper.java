@@ -12,7 +12,6 @@ public class LoginFormHelper {
 		LoginForm.getOpenMail().click();
 	}
 
-
 	public static void fillUsername(String username) {
 		LoginForm.getUserNameField().sendKeys(username);
 	}
@@ -22,7 +21,7 @@ public class LoginFormHelper {
 	}
 
 	public static void submitForm() {
-		LoginForm.getSignInIDButton().click();
+		LoginForm.getSignInButton().click();
 	}
 
 	public static void waitUntilOpened() {
@@ -31,12 +30,6 @@ public class LoginFormHelper {
 				.until(ExpectedConditions.visibilityOfElementLocated(LoginFormPassword.OPEN_LOGIN_FORM_BUTTON_LOCATOR));
 	}
 
-	public static void openLoginForm() {
-		LoginFormPassword.getOpenLoginFormPasswordButton().click();
-		new WebDriverWait(getDriver(), Duration.ofSeconds(2))
-				.withMessage("Invalid email")
-				.until(ExpectedConditions.visibilityOfElementLocated(LoginForm.getUserNameField().getLocator()));
-	}
 }
 
 

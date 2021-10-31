@@ -5,6 +5,7 @@ import common.driver.UiDriver;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import padeWrappers_Yandex_ru.landingPage.WriteMailHelper;
 import padeWrappers_Yandex_ru.loginPage.LoginFormHelper;
 
 
@@ -18,7 +19,7 @@ public class LoginPageTest extends AbstractTest {
 
 	@Test
 	@Story("LG_001")
-	public void loginTestRightCredentials()  {
+	public void loginTestRightCredentials() {
 
 		LoginFormHelper.openMail();
 		LoginFormHelper.fillUsername("ella.sushitskaya");
@@ -26,6 +27,12 @@ public class LoginPageTest extends AbstractTest {
 		LoginFormHelper.waitUntilOpened();
 		LoginFormHelper.fillPassword("happyMood");
 		LoginFormHelper.submitForm();
+
+		WriteMailHelper.waitUntilOpenedFormMail();
+		WriteMailHelper.openMail();
+
+
+
 
 
 
