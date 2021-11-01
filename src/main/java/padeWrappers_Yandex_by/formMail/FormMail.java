@@ -5,7 +5,7 @@ import common.elements.Input;
 import org.openqa.selenium.By;
 
 public class FormMail {
-	private static final By FROM_FIELD_LOCATOR = By.xpath("//div[@class=\"ComposeRecipients-TopRow\"]//div[@class=\"MultipleAddressesDesktop-Field ComposeYabblesField\"]");
+	private static final By FROM_FIELD_LOCATOR = By.xpath("//div[@class=\"MultipleAddressesDesktop ComposeRecipients-MultipleAddressField ComposeRecipients-ToField tst-field-to\"]//div[@is=\"x-bubbles\"]");
 	private static final By SUBJECT_FIELD_LOCATOR = By.xpath("//input[@name=\"subject\"]");
 	private static final By TEXT_IN_BUTTON_LOCATOR = By.id("editor7");
 	private static final By SEND_BUTTON_LOCATOR = By.id("//div[@class=\"ComposeControlPanel-Part\"]//div[@class=\"ComposeSendButton-Text\"]");

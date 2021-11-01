@@ -19,7 +19,7 @@ public class LoginPageTest extends AbstractTest {
 
 
 	@Test
-	@Story("LG_001")
+	@Story("Test_001")
 	public void loginTestRightCredentials() {
 
 		LoginFormHelper.openMail();
@@ -35,7 +35,7 @@ public class LoginPageTest extends AbstractTest {
 		FormMailHelper.waitUntilOpenedFormMail();
 		FormMailHelper.fillEmail("ella.sushitskaya@yandex.by");
 		FormMailHelper.fillSubject("test");
-		FormMailHelper.fillText("test");
+		FormMailHelper.fillText("testform");
 		FormMailHelper.sendMail();
 
 
