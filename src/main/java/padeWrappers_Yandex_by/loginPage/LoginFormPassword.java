@@ -1,4 +1,4 @@
-package padeWrappers_Yandex_ru.loginPage;
+package padeWrappers_Yandex_by.loginPage;
 
 import common.elements.Button;
 import org.openqa.selenium.By;

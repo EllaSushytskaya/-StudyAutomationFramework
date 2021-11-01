@@ -1,9 +1,9 @@
-package padeWrappers_Yandex_ru.loginPage;
+package padeWrappers_Yandex_by.loginPage;
 
 import common.elements.Button;
 import common.elements.Input;
 import org.openqa.selenium.By;
-import padeWrappers_Yandex_ru.AbstractPage;
+import padeWrappers_Yandex_by.AbstractPage;
 
 
 public class LoginForm extends AbstractPage {

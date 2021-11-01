@@ -1,4 +1,4 @@
-package padeWrappers_Yandex_ru.formMail;
+package padeWrappers_Yandex_by.formMail;
 
 import common.elements.Button;
 import common.elements.Input;
@@ -9,6 +9,7 @@ public class FormMail {
 	private static final By SUBJECT_FIELD_LOCATOR = By.xpath("//input[@name=\"subject\"]");
 	private static final By TEXT_IN_BUTTON_LOCATOR = By.id("editor7");
 	private static final By SEND_BUTTON_LOCATOR = By.id("//div[@class=\"ComposeControlPanel-Part\"]//div[@class=\"ComposeSendButton-Text\"]");
+	public static final By SEND_FORM_LOCATOR = By.xpath("//div[@class=\"ComposeManager ComposeManager_hidden ComposeManager_size_large\"]");
 
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
@@ -22,6 +23,7 @@ public class FormMail {
 	public static Button getSendButton() {
 		return new Button(SEND_BUTTON_LOCATOR);
 	}
+
 }
 
 

@@ -1,4 +1,4 @@
-package padeWrappers_Yandex_ru.loginPage;
+package padeWrappers_Yandex_by.loginPage;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
