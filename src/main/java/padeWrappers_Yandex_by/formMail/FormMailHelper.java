@@ -3,7 +3,7 @@ package padeWrappers_Yandex_by.formMail;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import padeWrappers_Yandex_by.landingPage.WriteMail;
+
 
 import java.time.Duration;
 

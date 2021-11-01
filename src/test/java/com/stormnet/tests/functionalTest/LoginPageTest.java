@@ -20,7 +20,7 @@ public class LoginPageTest extends AbstractTest {
 
 	@Test
 	@Story("Test_001")
-	public void loginTestRightCredentials() {
+	public void loginTestRightCredentials()  {
 
 		LoginFormHelper.openMail();
 		LoginFormHelper.fillUsername("ella.sushitskaya");
@@ -37,6 +37,9 @@ public class LoginPageTest extends AbstractTest {
 		FormMailHelper.fillSubject("test");
 		FormMailHelper.fillText("testform");
 		FormMailHelper.sendMail();
+
+
+
 
 
 

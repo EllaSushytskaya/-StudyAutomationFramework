@@ -7,9 +7,9 @@ import org.openqa.selenium.By;
 public class FormMail {
 	private static final By FROM_FIELD_LOCATOR = By.xpath("//div[@class=\"MultipleAddressesDesktop ComposeRecipients-MultipleAddressField ComposeRecipients-ToField tst-field-to\"]//div[@is=\"x-bubbles\"]");
 	private static final By SUBJECT_FIELD_LOCATOR = By.xpath("//input[@name=\"subject\"]");
-	private static final By TEXT_IN_BUTTON_LOCATOR = By.id("editor7");
-	private static final By SEND_BUTTON_LOCATOR = By.id("//div[@class=\"ComposeControlPanel-Part\"]//div[@class=\"ComposeSendButton-Text\"]");
-	public static final By SEND_FORM_LOCATOR = By.xpath("//div[@class=\"ComposeManager ComposeManager_hidden ComposeManager_size_large\"]");
+	private static final By TEXT_IN_BUTTON_LOCATOR = By.xpath("//div[@id=\"cke_1_contents\"]//div//div");
+	private static final By SEND_BUTTON_LOCATOR = By.xpath("//button[@class=\"Button2 Button2_pin_circle-circle Button2_view_default Button2_size_l\"]");
+	public static final By SEND_FORM_LOCATOR = By.xpath("//div[@class=\"ComposeControlPanel-Part\"]//span[@class=\"Button2-Text\"]//div[@class=\"ComposeSendButton-Text\"]");
 
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
