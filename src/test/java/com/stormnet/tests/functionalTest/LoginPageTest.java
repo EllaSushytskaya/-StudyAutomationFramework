@@ -38,6 +38,13 @@ public class LoginPageTest extends AbstractTest {
 		FormMailHelper.fillText("testform");
 		FormMailHelper.attachFail("C:\\Users\\Гена\\test\\локаторы.txt");
 		FormMailHelper.sendMail();
+		FormMailHelper.waitUntilAfterSendMail();
+
+		UiDriver.refDriver();
+		WriteMailHelper.waitUntilOpenedFormMail();
+
+
+
 
 
 

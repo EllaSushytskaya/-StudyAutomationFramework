@@ -39,4 +39,10 @@ public class FormMailHelper {
 		waitOpenFormSend.withMessage("Form was not opened")
 				.until(ExpectedConditions.visibilityOfElementLocated(FormMail.SEND_FORM_LOCATOR));
 	}
+	public static void waitUntilAfterSendMail() {
+		WebDriverWait waitAfterSendMail = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+		waitAfterSendMail.withMessage("Form was not opened")
+				.until(ExpectedConditions.visibilityOfElementLocated(FormMail.FORM_AFTER_SEND_LOCATOR));
+	}
+
 }

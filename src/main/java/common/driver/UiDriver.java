@@ -29,5 +29,9 @@ public class UiDriver {
 		instance.set(null);
 	}
 
+	public static void refDriver() {
+		getDriver().navigate().refresh();
+	}
+
 
 }
