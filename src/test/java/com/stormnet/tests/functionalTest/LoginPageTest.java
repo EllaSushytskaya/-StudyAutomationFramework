@@ -36,7 +36,10 @@ public class LoginPageTest extends AbstractTest {
 		FormMailHelper.fillEmail("ella.sushitskaya@yandex.by");
 		FormMailHelper.fillSubject("test");
 		FormMailHelper.fillText("testform");
+		FormMailHelper.attachFail("C:\\Users\\Гена\\test\\локаторы.txt");
 		FormMailHelper.sendMail();
+
+
 
 
 

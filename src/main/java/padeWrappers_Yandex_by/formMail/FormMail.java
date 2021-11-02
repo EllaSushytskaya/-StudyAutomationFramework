@@ -1,5 +1,6 @@
 package padeWrappers_Yandex_by.formMail;
 
+import common.elements.Attach;
 import common.elements.Button;
 import common.elements.Input;
 import org.openqa.selenium.By;
@@ -10,6 +11,9 @@ public class FormMail {
 	private static final By TEXT_IN_BUTTON_LOCATOR = By.xpath("//div[@id=\"cke_1_contents\"]//div//div");
 	private static final By SEND_BUTTON_LOCATOR = By.xpath("//button[@class=\"Button2 Button2_pin_circle-circle Button2_view_default Button2_size_l\"]");
 	public static final By SEND_FORM_LOCATOR = By.xpath("//div[@class=\"ComposeControlPanel-Part\"]//span[@class=\"Button2-Text\"]//div[@class=\"ComposeSendButton-Text\"]");
+
+	private static final By ATTACH_FIELD_LOCATOR = By.xpath("//input[@class=\"WithUpload-FileInput\"]");
+
 
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
@@ -23,6 +27,12 @@ public class FormMail {
 	public static Button getSendButton() {
 		return new Button(SEND_BUTTON_LOCATOR);
 	}
+
+	public static Attach getAttachFile(){
+		return new Attach(ATTACH_FIELD_LOCATOR);
+	}
+
+
 
 }
 
