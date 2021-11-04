@@ -1,9 +1,11 @@
 package padeWrappers_Yandex_by.formMail;
 
 
+import common.driver.Waiter;
 import common.elements.Attach;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import padeWrappers_Yandex_by.landingPage.WriteMail;
 import padeWrappers_Yandex_by.loginPage.LoginForm;
 
 
@@ -35,14 +37,13 @@ public class FormMailHelper {
 	}
 
 	public static void waitUntilOpenedFormMail() {
-		WebDriverWait waitOpenFormSend = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-		waitOpenFormSend.withMessage("Form was not opened")
-				.until(ExpectedConditions.visibilityOfElementLocated(FormMail.SEND_FORM_LOCATOR));
+		Waiter.untilVisable(FormMail.SEND_FORM_LOCATOR,"Form was not opened");
 	}
+
+
 	public static void waitUntilAfterSendMail() {
-		WebDriverWait waitAfterSendMail = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-		waitAfterSendMail.withMessage("Form was not opened")
-				.until(ExpectedConditions.visibilityOfElementLocated(FormMail.FORM_AFTER_SEND_LOCATOR));
+		Waiter.untilVisable(FormMail.FORM_AFTER_SEND_LOCATOR,"Form was not opened");
 	}
+
 
 }

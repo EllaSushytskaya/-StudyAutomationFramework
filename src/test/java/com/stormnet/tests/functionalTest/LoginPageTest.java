@@ -6,6 +6,7 @@ import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import padeWrappers_Yandex_by.formMail.FormMailHelper;
+import padeWrappers_Yandex_by.landingPage.AreaInboxHelper;
 import padeWrappers_Yandex_by.landingPage.WriteMailHelper;
 import padeWrappers_Yandex_by.loginPage.LoginFormHelper;
 
@@ -19,8 +20,8 @@ public class LoginPageTest extends AbstractTest {
 
 
 	@Test
-	@Story("Test_001")
-	public void loginTestRightCredentials()  {
+	@Story("Send and delete mail")
+	public void sendAndDeleteMail() {
 
 		LoginFormHelper.openMail();
 		LoginFormHelper.fillUsername("ella.sushitskaya");
@@ -32,17 +33,24 @@ public class LoginPageTest extends AbstractTest {
 		WriteMailHelper.waitUntilOpenedFormMail();
 		WriteMailHelper.openMail();
 
+
 		FormMailHelper.waitUntilOpenedFormMail();
 		FormMailHelper.fillEmail("ella.sushitskaya@yandex.by");
 		FormMailHelper.fillSubject("test");
 		FormMailHelper.fillText("testform");
 		FormMailHelper.attachFail("C:\\Users\\Гена\\test\\локаторы.txt");
+
 		FormMailHelper.sendMail();
 		FormMailHelper.waitUntilAfterSendMail();
 
 		UiDriver.refDriver();
 		WriteMailHelper.waitUntilOpenedFormMail();
 
+		AreaInboxHelper.openDisk();
+
+
+
+	}
 
 
 
@@ -59,6 +67,6 @@ public class LoginPageTest extends AbstractTest {
 	}
 
 
-}
+
 
 
