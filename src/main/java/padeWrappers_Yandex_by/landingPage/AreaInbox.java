@@ -4,11 +4,13 @@ import common.elements.Button;
 import org.openqa.selenium.By;
 
 public class AreaInbox {
-	public static final By OPEN_DISK_BUTTON_LOCATOR = By.xpath("//a[@data-mid=\"177610710304424025\"]");
-//svg[@class="svgicon svgicon-mail--Attach-Download_Disk"]
+	public static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("(//a[contains(@class, \"mail-File-Actions-Item_secondary\")])[1]");
 
-	public static Button getOpenDiskButton() {
-		return new Button(OPEN_DISK_BUTTON_LOCATOR);
+	//xPath for allert //div[contains(@class, "ComposeConfirmPopup-Content")]
+
+	public static Button getSaveDiskButton() {
+		return new Button(SAVE_ON_DISK_BUTTON_LOCATOR);
 	}
+
 
 }

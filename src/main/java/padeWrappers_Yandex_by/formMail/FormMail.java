@@ -15,6 +15,8 @@ public class FormMail {
 	private static final By ATTACH_FIELD_LOCATOR = By.xpath("//input[contains(@class, \"WithUpload-FileInput\")]");
 	public static final By FORM_AFTER_SEND_LOCATOR = By.xpath("//div[contains(@class,\"ComposeDoneScreen-Header\")]");
 
+
+
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
 	}
@@ -29,6 +31,7 @@ public class FormMail {
 	}
 	public static Attach getAttachFile(){ return new Attach(ATTACH_FIELD_LOCATOR);
 	}
+
 
 
 
