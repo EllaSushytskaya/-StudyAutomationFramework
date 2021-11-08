@@ -5,6 +5,9 @@ import common.driver.UiDriver;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import padeWrappers_Yandex_by.disk.DownloadFile;
+import padeWrappers_Yandex_by.disk.DownloadFileHelper;
+import padeWrappers_Yandex_by.disk.FileHelper;
 import padeWrappers_Yandex_by.formMail.FormMailHelper;
 import padeWrappers_Yandex_by.landingPage.AreaInboxHelper;
 import padeWrappers_Yandex_by.landingPage.HeaderPanelHelper;
@@ -22,7 +25,7 @@ public class LoginPageTest extends AbstractTest {
 
 	@Test
 	@Story("Send and delete mail")
-	public void sendAndDeleteMail() throws InterruptedException {
+	public void sendAndDeleteMail() {
 
 		LoginFormHelper.openMail();
 		LoginFormHelper.fillUsername("ella.sushitskaya");
@@ -46,9 +49,11 @@ public class LoginPageTest extends AbstractTest {
 		AreaInboxHelper.waitUntilIconDisk();
 		AreaInboxHelper.saveDisk();
 
-
 		HeaderPanelHelper.openDisk();
 
+		FileHelper.openDownload();
+
+		DownloadFileHelper.doRightClick();
 
 
 

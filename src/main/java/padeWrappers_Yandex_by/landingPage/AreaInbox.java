@@ -4,7 +4,7 @@ import common.elements.Button;
 import org.openqa.selenium.By;
 
 public class AreaInbox {
-	public static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("(//a[contains(@class, \"mail-File-Actions-Item_secondary\")])[1]");
+	public static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("(//div[contains(@class, \"listing-item__fields\")])[1]");
 
 	//xPath for allert //div[contains(@class, "ComposeConfirmPopup-Content")]
 
