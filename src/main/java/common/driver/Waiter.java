@@ -15,4 +15,12 @@ public class Waiter {
 				.withMessage("Form was not opened")
 				.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
+
+	public static void untilInVisable(By element, String message) {
+		new WebDriverWait(UiDriver.getDriver(), Duration.ofSeconds(defaultWaitTimeInSecond))
+				.withMessage("Form was not opened")
+				.until(ExpectedConditions.invisibilityOfElementLocated(element));
+
+
+	}
 }

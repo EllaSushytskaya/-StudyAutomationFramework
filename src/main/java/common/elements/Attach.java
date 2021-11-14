@@ -13,7 +13,6 @@ public class Attach extends HtmlElement{
 	}
 
 	public void attach(String file) {
-
 		getElement().sendKeys(file);
 
 	}

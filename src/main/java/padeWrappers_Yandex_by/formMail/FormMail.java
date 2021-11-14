@@ -14,23 +14,27 @@ public class FormMail {
 	public static final By SEND_FORM_LOCATOR = By.xpath("//div[contains(@class, \"composeReact__scrollable-top-content\")]");
 	private static final By ATTACH_FIELD_LOCATOR = By.xpath("//input[contains(@class, \"WithUpload-FileInput\")]");
 	public static final By FORM_AFTER_SEND_LOCATOR = By.xpath("//div[contains(@class,\"ComposeDoneScreen-Header\")]");
-
-
+	public static final By PROGRESS_BAR_LOCATOR = By.xpath("//div[contains(@class, \"ATTACH_FIELD_LOCATORF\")]");
 
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
 	}
+
 	public static Input getSubjectField() {
 		return new Input(SUBJECT_FIELD_LOCATOR);
 	}
+
 	public static Input getTextField() {
 		return new Input(TEXT_IN_BUTTON_LOCATOR);
 	}
+
 	public static Button getSendButton() {
 		return new Button(SEND_BUTTON_LOCATOR);
 	}
-	public static Attach getAttachFile(){ return new Attach(ATTACH_FIELD_LOCATOR);}
 
+	public static Attach getAttachFile() {
+		return new Attach(ATTACH_FIELD_LOCATOR);
+	}
 
 
 

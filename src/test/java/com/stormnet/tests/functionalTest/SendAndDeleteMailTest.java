@@ -37,22 +37,7 @@ public class SendAndDeleteMailTest extends AbstractTest {
 
 		DiskPageHelper.DownloadFileHelper.doRightClick();
 
-
-
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 

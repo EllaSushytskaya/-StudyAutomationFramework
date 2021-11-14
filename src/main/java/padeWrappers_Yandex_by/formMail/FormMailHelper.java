@@ -1,12 +1,11 @@
 package padeWrappers_Yandex_by.formMail;
 
 
-import common.driver.UiDriver;
 import common.driver.Waiter;
 import common.elements.Attach;
 import io.qameta.allure.Step;
 import logerator.Logger;
-import org.openqa.selenium.UnhandledAlertException;
+
 
 
 public class FormMailHelper {
@@ -32,13 +31,15 @@ public class FormMailHelper {
 		FormMail.getSendButton().click();
 	}
 
+
 	@Step("Attach file")
 	public static void attachFail(String file) {
-		try {
 			FormMail.getAttachFile().attach(file);
-		} catch (UnhandledAlertException e) {
-			UiDriver.closeAllert();
-		}
+	}
+
+	@Step("Wait until attach file")
+	public static void waitUntilAttachFile() {
+		Waiter.untilInVisable(FormMail.PROGRESS_BAR_LOCATOR, "File not attach");
 	}
 
 	@Step("Wait until open form mail")
@@ -59,6 +60,7 @@ public class FormMailHelper {
 		fillSubject(subject);
 		fillText(text);
 		attachFail(file);
+		waitUntilAttachFile();
 		sendMail();
 		waitUntilAfterSendMail();
 		Logger.getLogger().info("Write mail as {}/{}", email, subject, text);
