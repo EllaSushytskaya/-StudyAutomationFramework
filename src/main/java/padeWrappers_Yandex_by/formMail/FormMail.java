@@ -29,8 +29,7 @@ public class FormMail {
 	public static Button getSendButton() {
 		return new Button(SEND_BUTTON_LOCATOR);
 	}
-	public static Attach getAttachFile(){ return new Attach(ATTACH_FIELD_LOCATOR);
-	}
+	public static Attach getAttachFile(){ return new Attach(ATTACH_FIELD_LOCATOR);}
 
 
 

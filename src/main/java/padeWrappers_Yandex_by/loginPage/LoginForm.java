@@ -16,7 +16,6 @@ public class LoginForm extends AbstractPage {
 		return new Button(OPEN_MAIL_LOCATOR);
 	}
 
-
 	public static Input getUserNameField() {
 		return new Input(USERNAME_FIELD_LOCATOR);
 	}
@@ -30,4 +29,11 @@ public class LoginForm extends AbstractPage {
 	}
 
 
+	public static class LoginFormPassword {
+		public static final By OPEN_LOGIN_FORM_BUTTON_LOCATOR = By.xpath("//div[@data-t=\"page:welcome\"]");
+
+		public static Button getOpenLoginFormPasswordButton() {
+			return new Button(OPEN_LOGIN_FORM_BUTTON_LOCATOR);
+		}
+	}
 }
