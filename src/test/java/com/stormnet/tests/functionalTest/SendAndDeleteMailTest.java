@@ -25,21 +25,14 @@ public class SendAndDeleteMailTest extends AbstractTest {
 
 		LoginFormHelper.loginWithCreds("ella.sushitskaya", "happyMood");
 		LandingPageHelper.WriteMailHelper.openFormWriteMail();
-		FormMailHelper.writeMail("ella.sushitskaya@yandex.by","test", "testform","C:\\\\Users\\\\Гена\\\\test\\\\локаторы.txt");
+		FormMailHelper.writeMail("ella.sushitskaya@yandex.by", "test", "testform", "C:\\\\Users\\\\Гена\\\\test\\\\test.txt");
 		UiDriver.refDriver();
-
-		//AreaInboxHelper.waitUntilIconDisk();
-		//AreaInboxHelper.saveDisk();
-
-		LandingPageHelper.HeaderPanelHelper.openDisk();
-
-		DiskPageHelper.TestFileHelper.openDownload();
-
-		DiskPageHelper.DownloadFileHelper.doRightClick();
+		LandingPageHelper.AreaInboxHelper.saveOnDiskAndOpenToDisk();
+		DiskPageHelper.openDownloadFiledOpenContextMenu();
 
 	}
 
-	}
+}
 
 
 

@@ -11,10 +11,10 @@ public class FormMail {
 	private static final By SUBJECT_FIELD_LOCATOR = By.xpath("//input[@name=\"subject\"]");
 	private static final By TEXT_IN_BUTTON_LOCATOR = By.xpath("//div[@id=\"cke_1_contents\"]//div//div");
 	private static final By SEND_BUTTON_LOCATOR = By.xpath("//button[contains(@class, \"Button2_view_default Button2_size_l\")]");
-	public static final By SEND_FORM_LOCATOR = By.xpath("//div[contains(@class, \"composeReact__scrollable-top-content\")]");
+	private static final By SEND_FORM_LOCATOR = By.xpath("//div[contains(@class, \"composeReact__scrollable-top-content\")]");
 	private static final By ATTACH_FIELD_LOCATOR = By.xpath("//input[contains(@class, \"WithUpload-FileInput\")]");
-	public static final By FORM_AFTER_SEND_LOCATOR = By.xpath("//div[contains(@class,\"ComposeDoneScreen-Header\")]");
-	public static final By PROGRESS_BAR_LOCATOR = By.xpath("//div[contains(@class, \"ATTACH_FIELD_LOCATORF\")]");
+	private static final By FORM_AFTER_SEND_LOCATOR = By.xpath("//div[contains(@class,\"ComposeDoneScreen-Header\")]");
+	private static final By PROGRESS_BAR_LOCATOR = By.xpath("//div[contains(@class, \"ATTACH_FIELD_LOCATORF\")]");
 
 	public static Input getEmailField() {
 		return new Input(FROM_FIELD_LOCATOR);
@@ -30,6 +30,15 @@ public class FormMail {
 
 	public static Button getSendButton() {
 		return new Button(SEND_BUTTON_LOCATOR);
+	}
+	public static Input getFormAfterSend() {
+		return new Input(FORM_AFTER_SEND_LOCATOR);
+	}
+	public static Button getSendForm() {
+		return new Button(SEND_FORM_LOCATOR);
+	}
+	public static Input getProgressBar() {
+		return new Input(PROGRESS_BAR_LOCATOR);
 	}
 
 	public static Attach getAttachFile() {

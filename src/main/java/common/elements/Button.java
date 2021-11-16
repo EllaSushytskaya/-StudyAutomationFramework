@@ -4,6 +4,7 @@ import common.driver.UiDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import padeWrappers_Yandex_by.disk.DiskPage;
 
 public class Button extends HtmlElement {
 	public Button(By locator) {
@@ -16,7 +17,7 @@ public class Button extends HtmlElement {
 
 	public void rightClick() {
 		Actions actions = new Actions(UiDriver.getDriver());
-		actions.contextClick((WebElement) locator).perform();
+		actions.contextClick((WebElement) locator).build().perform();
 
 	}
 }

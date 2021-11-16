@@ -27,7 +27,7 @@ public class LoginFormHelper {
 	}
 	@Step("Wait until open landing page")
 	public static void waitUntilOpened() {
-		Waiter.untilVisable(LoginForm.LoginFormPassword.OPEN_LOGIN_FORM_BUTTON_LOCATOR, "Page was not opened");
+		Waiter.untilVisable(LoginForm.LoginFormPassword.getOpenLoginFormPasswordButton(), "Page was not opened");
 	}
 
 	@Step("Login to application with creds")

@@ -39,17 +39,17 @@ public class FormMailHelper {
 
 	@Step("Wait until attach file")
 	public static void waitUntilAttachFile() {
-		Waiter.untilInVisable(FormMail.PROGRESS_BAR_LOCATOR, "File not attach");
+		Waiter.untilInVisable(FormMail.getProgressBar(), "File not attach");
 	}
 
 	@Step("Wait until open form mail")
 	public static void waitUntilOpenedFormMail() {
-		Waiter.untilVisable(FormMail.SEND_FORM_LOCATOR, "Form was not opened");
+		Waiter.untilVisable(FormMail.getSendForm(), "Form was not opened");
 	}
 
 	@Step("Wait until after send mail")
 	public static void waitUntilAfterSendMail() {
-		Waiter.untilVisable(FormMail.FORM_AFTER_SEND_LOCATOR, "Form was not opened");
+		Waiter.untilVisable(FormMail.getFormAfterSend(), "Form was not opened");
 	}
 
 	@Step("Write mail")
