@@ -10,7 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 
 
 public class DiskPageHelper {
-	private static final By CONTEXT_MENU_BUTTON_LOCATOR = By.xpath("//div[contains(@class, \"listing-item listing-item_theme_tile listing-item_size_m listing-item_type_file js-prevent-deselect\")]");
 
 	@Step("Open download on disk")
 	public static void openDownload() {
@@ -23,16 +22,18 @@ public class DiskPageHelper {
 	}
 
 	@Step("Open context menu")
-	public static void doRightClick() {
-		Actions actions = new Actions((WebDriver) UiDriver.getDriver().findElement(CONTEXT_MENU_BUTTON_LOCATOR));
-		actions.contextClick(DiskPage.RightClick.getRightClickButton()).perform();
+	public static void doRightClick(String xpath) {
+		String locator = xpath;
+		WebElement el = UiDriver.getDriver().findElement( By.xpath("//div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")]"));
+		Actions actions = new Actions(UiDriver.getDriver());
+		actions.contextClick(el).build().perform();
 	}
 	@Step("Open download file and open context menu")
 	public static void openDownloadFiledOpenContextMenu() {
 		DiskPageHelper.waitUntilDownload();
 		DiskPageHelper.openDownload();
 		DiskPageHelper.waitUntilDownloadFile();
-		//DiskPageHelper.doRightClick(DiskPage.RightClick.getRightClickButton());
+		DiskPageHelper.doRightClick("//div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")]");
 	}
 
 

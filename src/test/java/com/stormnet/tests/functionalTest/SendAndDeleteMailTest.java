@@ -21,14 +21,15 @@ public class SendAndDeleteMailTest extends AbstractTest {
 
 	@Test
 	@Story("Send and delete mail")
-	public void sendAndDeleteMail() {
-
+	public void sendAndDeleteMail()  {
 		LoginFormHelper.loginWithCreds("ella.sushitskaya", "happyMood");
 		LandingPageHelper.WriteMailHelper.openFormWriteMail();
 		FormMailHelper.writeMail("ella.sushitskaya@yandex.by", "test", "testform", "C:\\\\Users\\\\Гена\\\\test\\\\test.txt");
 		UiDriver.refDriver();
 		LandingPageHelper.AreaInboxHelper.saveOnDiskAndOpenToDisk();
 		DiskPageHelper.openDownloadFiledOpenContextMenu();
+
+
 
 	}
 
