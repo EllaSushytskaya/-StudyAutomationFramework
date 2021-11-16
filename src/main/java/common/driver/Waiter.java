@@ -9,7 +9,7 @@ import java.time.Duration;
 
 
 public class Waiter {
-	private static final int defaultWaitTimeInSecond = 7;
+	private static final int defaultWaitTimeInSecond = 10;
 
 	public static void untilVisable(HtmlElement element, String message) {
 		new WebDriverWait(UiDriver.getDriver(), Duration.ofSeconds(defaultWaitTimeInSecond))
@@ -22,6 +22,11 @@ public class Waiter {
 				.withMessage("Form was not opened")
 				.until(ExpectedConditions.invisibilityOfElementLocated(element.getLocator()));
 
+	}
 
+	public static void untilPresenceOfElementLocated(HtmlElement element, String message) {
+		new WebDriverWait(UiDriver.getDriver(), Duration.ofSeconds(defaultWaitTimeInSecond))
+				.withMessage("Form was not opened")
+				.until(ExpectedConditions.elementToBeClickable(element.getLocator()));
 	}
 }

@@ -5,8 +5,10 @@ import common.driver.UiDriver;
 import common.driver.Waiter;
 import io.qameta.allure.Step;
 import logerator.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static common.driver.UiDriver.getDriver;
 import static padeWrappers_Yandex_by.landingPage.LandingPage.HeaderPanel.getOpenDiskButton;
@@ -15,16 +17,19 @@ import static padeWrappers_Yandex_by.landingPage.LandingPage.HeaderPanel.getOpen
 public class LandingPageHelper {
 	public static class AreaInboxHelper {
 		@Step("Save file on disk")
-		public static void saveDisk(WebElement element) {
+		public static void saveDisk() {
+			WebElement elements = UiDriver.getDriver().findElement(By.xpath("(//a[contains(@class, \"mail-File-Actions-Item js-skip-click-message-item js-attachment-actions-item js-show-save-popup mail-File-Actions-Item_secondary\")])[1]"));
 			JavascriptExecutor executor = (JavascriptExecutor) UiDriver.getDriver();
-			executor.executeScript("arguments[0].click();", element);
+			executor.executeScript("arguments[0].click();", elements);
 		}
 
-		@Step("Wait until area download disk")
-		public static void waitUntilAreaDownloadDisk() {
-			Waiter.untilVisable(LandingPage.AreaDownload.getAreaSaveOnDiskButton(), "File not download");
 
+		@Step("Wait until area inbox download file")
+		public static void waitUntilAreaInbox() {
+			Waiter.untilVisable(LandingPage.AreaDownload.getSaveOnDisk(), "File not download");
 		}
+
+
 		public static class HeaderPanelHelper {
 			@Step("Open yandex disk")
 			public static void openDisk() {
@@ -33,9 +38,9 @@ public class LandingPageHelper {
 		}
 
 		@Step("Save on disk and open to disk")
-		public static void saveOnDiskAndOpenToDisk() {
-			//AreaInboxHelper.saveDisk(LandingPage.AreaInbox.saveOnDisk);
-			//AreaInboxHelper.waitUntilAreaDownloadDisk();
+		public static void saveOnDiskAndOpenToDisk(){
+			AreaInboxHelper.waitUntilAreaInbox();
+			AreaInboxHelper.saveDisk();
 			HeaderPanelHelper.openDisk();
 		}
 	}
