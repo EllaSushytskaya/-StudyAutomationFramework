@@ -8,10 +8,6 @@ import logerator.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
-import static common.driver.UiDriver.getDriver;
-import static padeWrappers_Yandex_by.landingPage.LandingPage.HeaderPanel.getOpenDiskButton;
 
 
 public class LandingPageHelper {
@@ -38,9 +34,9 @@ public class LandingPageHelper {
 		}
 
 		@Step("Save on disk and open to disk")
-		public static void saveOnDiskAndOpenToDisk(){
-			//AreaInboxHelper.waitUntilAreaInbox();
-			//AreaInboxHelper.saveDisk();
+		public static void saveOnDiskAndOpenToDisk() {
+			AreaInboxHelper.waitUntilAreaInbox();
+			AreaInboxHelper.saveDisk();
 			HeaderPanelHelper.openDisk();
 		}
 	}

@@ -3,10 +3,8 @@ package com.stormnet.tests.functionalTest;
 import com.stormnet.tests.AbstractTest;
 import common.driver.UiDriver;
 import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import padeWrappers_Yandex_by.disk.DiskPage;
 import padeWrappers_Yandex_by.disk.DiskPageHelper;
 import padeWrappers_Yandex_by.formMail.FormMailHelper;
 import padeWrappers_Yandex_by.landingPage.LandingPageHelper;
@@ -31,7 +29,6 @@ public class SendAndDeleteMailTest extends AbstractTest {
 		LandingPageHelper.AreaInboxHelper.saveOnDiskAndOpenToDisk();
 		DiskPageHelper.openDownloadFileAndRelocateByContextMenu();
 		DiskPageHelper.openPackageFileAndDeleteFileInBasket();
-
 
 	}
 }

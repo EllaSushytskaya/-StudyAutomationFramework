@@ -1,7 +1,6 @@
 package padeWrappers_Yandex_by.landingPage;
 
 import common.elements.Button;
-import common.elements.Input;
 import org.openqa.selenium.By;
 
 
@@ -9,7 +8,7 @@ public class LandingPage {
 
 
 	public static class AreaDownload {
-		private static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("//div[contains(@class, \"PSHeaderIcon-Image_Disk\")]");
+		private static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("(//a[contains(@class, \"mail-File-Actions-Item js-skip-click-message-item js-attachment-actions-item js-show-save-popup mail-File-Actions-Item_secondary\")])[1]");
 
 
 		public static Button getSaveOnDisk() {
