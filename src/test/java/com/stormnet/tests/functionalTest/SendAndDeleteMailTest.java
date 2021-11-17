@@ -28,7 +28,7 @@ public class SendAndDeleteMailTest extends AbstractTest {
 		UiDriver.refDriver();
 		LandingPageHelper.AreaInboxHelper.saveOnDiskAndOpenToDisk();
 		DiskPageHelper.openDownloadFileAndRelocateByContextMenu();
-
+		DiskPageHelper.openPackageFileAndDeleteFileInBasket();
 	}
 
 }
