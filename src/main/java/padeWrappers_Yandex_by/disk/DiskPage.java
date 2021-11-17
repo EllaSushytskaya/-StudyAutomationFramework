@@ -9,6 +9,7 @@ public class DiskPage {
 	private static final By MOVE_FILE_LOCATOR = By.xpath("//div[contains(@class, \"resources-actions-popup__action_type_move\")]");
 	private static final By MOVE_FILE_IN_PACKAGE_FILE_LOCATOR = By.xpath("//span[contains(text(), \"Переместить\")]");
 	private static final By PACKAGE_FILE_LOCATOR = By.xpath("//a[contains(text(), \"Файлы\")]//ancestor::a");
+	private static final By BASKET_LOCATOR = By.xpath("//div[contains(@class, \"listing-item listing-item_theme_tile listing-item_size_m listing-item_type_dir js-prevent-drag js-prevent-deselect\")]");
 
 	public static Button getRightClickButton() {
 		return new Button(CONTEXT_MENU_BUTTON_LOCATOR);
@@ -28,6 +29,9 @@ public class DiskPage {
 
 	public static Button getFileButton() {
 		return new Button(PACKAGE_FILE_LOCATOR);
+	}
+	public static Button getBasketButton() {
+		return new Button(BASKET_LOCATOR);
 	}
 }
 

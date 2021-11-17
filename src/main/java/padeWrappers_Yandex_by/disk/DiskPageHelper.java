@@ -72,6 +72,12 @@ public class DiskPageHelper {
 		Actions actions = new Actions(UiDriver.getDriver());
 		actions.dragAndDrop(element,elementBasket).build().perform();
 	}
+	@Step("Open basket")
+	public static void openBasket() {
+		DiskPage.getBasketButton().click();
+
+
+	}
 
 
 	@Step("Open package file and delete file in basket")
@@ -79,8 +85,9 @@ public class DiskPageHelper {
 		DiskPageHelper.waitUntilOpenFile();
 		DiskPageHelper.openPackageFile();
 		DiskPageHelper.relocateFileInBasket();
+		DiskPageHelper.openBasket();
+
 
 	}
-
 
 }
