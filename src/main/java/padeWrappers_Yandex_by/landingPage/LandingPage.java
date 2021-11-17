@@ -9,11 +9,11 @@ public class LandingPage {
 
 
 	public static class AreaDownload {
-		private static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("//a[contains(@class, \"mail-ComposeButton\")]");
+		private static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("//div[contains(@class, \"PSHeaderIcon-Image_Disk\")]");
 
 
-		public static Input getSaveOnDisk() {
-			return new Input(SAVE_ON_DISK_BUTTON_LOCATOR);
+		public static Button getSaveOnDisk() {
+			return new Button(SAVE_ON_DISK_BUTTON_LOCATOR);
 		}
 	}
 

@@ -39,8 +39,8 @@ public class LandingPageHelper {
 
 		@Step("Save on disk and open to disk")
 		public static void saveOnDiskAndOpenToDisk(){
-			AreaInboxHelper.waitUntilAreaInbox();
-			AreaInboxHelper.saveDisk();
+			//AreaInboxHelper.waitUntilAreaInbox();
+			//AreaInboxHelper.saveDisk();
 			HeaderPanelHelper.openDisk();
 		}
 	}

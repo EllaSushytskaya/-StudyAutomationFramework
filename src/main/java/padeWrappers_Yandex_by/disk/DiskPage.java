@@ -4,10 +4,10 @@ import common.elements.Button;
 import org.openqa.selenium.By;
 
 public class DiskPage {
-	private static final By CONTEXT_MENU_BUTTON_LOCATOR = By.xpath("div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")]");
-	public static final By DOWNLOAD_BUTTON_LOCATOR = By.xpath("//span[contains(text(), \"Загрузки\")]//ancestor::a");
-	public static final By RELOCATE_FILE_LOCATOR = By.id("item-16364064484887520-4");
-
+	private static final By CONTEXT_MENU_BUTTON_LOCATOR = By.xpath("//div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")]");
+	private static final By DOWNLOAD_BUTTON_LOCATOR = By.xpath("//span[contains(text(), \"Загрузки\")]//ancestor::a");
+	private static final By MOVE_FILE_LOCATOR = By.xpath("//div[contains(@class, \"resources-actions-popup__action_type_move\")]");
+	private static final By MOVE_FILE_IN_PACKAGE_FILE_LOCATOR = By.xpath("//div[contains(@class,  \"Modal-Content\")]//button[contains(@class, \"confirmation-dialog__button_submit\")]");
 
 	public static Button getRightClickButton() {
 		return new Button(CONTEXT_MENU_BUTTON_LOCATOR);
@@ -17,10 +17,13 @@ public class DiskPage {
 		return new Button(DOWNLOAD_BUTTON_LOCATOR);
 	}
 
-	public static Button getRelocateFileButton() {
-		return new Button(DOWNLOAD_BUTTON_LOCATOR);
+	public static Button getClickMoveToFileContextMenu() {
+		return new Button(MOVE_FILE_LOCATOR);
 	}
 
+	public static Button getMoveToFileInPackageFile() {
+		return new Button(MOVE_FILE_IN_PACKAGE_FILE_LOCATOR);
+	}
 
 }
 
