@@ -37,9 +37,6 @@ public class UiDriver {
 		getDriver().navigate().refresh();
 	}
 
-	public static void closeAllert() {
-		UiDriver.getDriver().switchTo().alert().accept();
-	}
 
 
 

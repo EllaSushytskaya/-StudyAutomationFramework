@@ -27,6 +27,6 @@ public class Waiter {
 	public static void untilPresenceOfElementLocated(HtmlElement element, String message) {
 		new WebDriverWait(UiDriver.getDriver(), Duration.ofSeconds(defaultWaitTimeInSecond))
 				.withMessage("Form was not opened")
-				.until(ExpectedConditions.elementToBeClickable(element.getLocator()));
+				.until(ExpectedConditions.presenceOfElementLocated(element.getLocator()));
 	}
 }

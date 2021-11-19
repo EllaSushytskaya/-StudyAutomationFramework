@@ -7,7 +7,7 @@ import padeWrappers_Yandex_by.AbstractPage;
 
 
 public class LoginForm extends AbstractPage {
-	private static final By OPEN_MAIL_LOCATOR = By.xpath("// div[@class=\"HeadBanner-ButtonsWrapper\"]/a[@data-lego=\"react\"][2]");
+	private static final By OPEN_MAIL_LOCATOR = By.xpath("//div[@class=\"HeadBanner-ButtonsWrapper\"]/a[@data-lego=\"react\"][2]");
 	private static final By USERNAME_FIELD_LOCATOR = By.id("passp-field-login");
 	private static final By PASSWORD_FIELD_LOCATOR = By.id("passp-field-passwd");
 	private static final By SIGN_IN_BUTTON_LOCATOR = By.id("passp:sign-in");

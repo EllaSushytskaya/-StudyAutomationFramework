@@ -5,7 +5,7 @@ import common.driver.Waiter;
 import common.elements.Attach;
 import io.qameta.allure.Step;
 import logerator.Logger;
-
+import java.io.File;
 
 
 public class FormMailHelper {
@@ -48,7 +48,7 @@ public class FormMailHelper {
 	}
 
 	@Step("Wait until after send mail")
-	public static void waitUntilAfterSendMail() {
+	public static void waitUntilVisibleFormAfterSendMail() {
 		Waiter.untilVisable(FormMail.getFormAfterSend(), "Form was not opened");
 	}
 
@@ -62,8 +62,8 @@ public class FormMailHelper {
 		attachFail(file);
 		waitUntilAttachFile();
 		sendMail();
-		waitUntilAfterSendMail();
-		Logger.getLogger().info("Write mail as {}/{}", email, subject, text);
+		waitUntilVisibleFormAfterSendMail();
+		Logger.getLogger().info("Write mail as {}/{}/{}", email, subject, text);
 
 	}
 

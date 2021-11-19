@@ -21,8 +21,12 @@ public class LandingPageHelper {
 
 
 		@Step("Wait until area inbox download file")
-		public static void waitUntilAreaInbox() {
-			Waiter.untilVisable(LandingPage.AreaDownload.getSaveOnDisk(), "File not download");
+		public static void waitUntilAreaInboxVisibility() {
+			Waiter.untilPresenceOfElementLocated(LandingPage.AreaDownload.getSaveOnDisk(), "File not download");
+		}
+		@Step("Wait until area inbox download file")
+		public static void waitUntilAreaDownloadDiskVisible() {
+			Waiter.untilPresenceOfElementLocated(LandingPage.AreaDownload.getDownloadDisk(), "Area not download");
 		}
 
 
@@ -35,9 +39,11 @@ public class LandingPageHelper {
 
 		@Step("Save on disk and open to disk")
 		public static void saveOnDiskAndOpenToDisk() {
-			AreaInboxHelper.waitUntilAreaInbox();
+			Logger.getLogger().info("Try save download file and save to disk");
+			AreaInboxHelper.waitUntilAreaInboxVisibility();
 			AreaInboxHelper.saveDisk();
 			HeaderPanelHelper.openDisk();
+			Logger.getLogger().info("Save download file and save to disk");
 		}
 	}
 
@@ -54,6 +60,7 @@ public class LandingPageHelper {
 
 		@Step("Open form write mail")
 		public static void openFormWriteMail() {
+			Logger.getLogger().info("Try open form write mail");
 			waitUntilOpenedFormMail();
 			openMail();
 			Logger.getLogger().info("Open form write mail");
