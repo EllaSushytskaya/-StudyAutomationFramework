@@ -1,9 +1,12 @@
 package padeWrappers_Yandex_by.loginPage;
 
+
 import common.driver.Waiter;
 import io.qameta.allure.Step;
 import logerator.Logger;
-
+import org.testng.Assert;
+import padeWrappers_Yandex_by.landingPage.LandingPage;
+import padeWrappers_Yandex_by.landingPage.LandingPageHelper;
 
 public class LoginFormHelper {
 
@@ -39,6 +42,8 @@ public class LoginFormHelper {
 		waitUntilOpenedFormPassword();
 		fillPassword(password);
 		submitForm();
+		LandingPageHelper.WriteMailHelper.waitUntilOpenedFormMail();
+		Assert.assertTrue(LandingPage.WriteMail.getOpenFormWriteMailButton().getElement().isDisplayed(),"User is not login");
 		Logger.getLogger().info("Logged in as {}/{}", userName, password);
 	}
 

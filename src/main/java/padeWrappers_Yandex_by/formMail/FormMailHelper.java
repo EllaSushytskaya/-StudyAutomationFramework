@@ -2,14 +2,13 @@ package padeWrappers_Yandex_by.formMail;
 
 
 import common.driver.Waiter;
-import common.elements.Attach;
 import io.qameta.allure.Step;
 import logerator.Logger;
-import java.io.File;
+import org.testng.Assert;
+import padeWrappers_Yandex_by.landingPage.LandingPage;
 
 
 public class FormMailHelper {
-	private static Attach attachFile;
 
 	@Step("Fill email by {0}")
 	public static void fillEmail(String email) {
@@ -34,7 +33,7 @@ public class FormMailHelper {
 
 	@Step("Attach file")
 	public static void attachFail(String file) {
-			FormMail.getAttachFile().attach(file);
+		FormMail.getAttachFile().attach(file);
 	}
 
 	@Step("Wait until attach file")
@@ -52,6 +51,8 @@ public class FormMailHelper {
 		Waiter.untilVisable(FormMail.getFormAfterSend(), "Form was not opened");
 	}
 
+
+
 	@Step("Write mail")
 	public static void writeMail(String email, String subject, String text, String file) {
 		Logger.getLogger().info("Try to write as {}/{}/{}", email, subject, text);
@@ -63,6 +64,7 @@ public class FormMailHelper {
 		waitUntilAttachFile();
 		sendMail();
 		waitUntilVisibleFormAfterSendMail();
+		Assert.assertTrue(FormMail.getFormAfterSend().getElement().isDisplayed(),"Mail is not send");
 		Logger.getLogger().info("Write mail as {}/{}/{}", email, subject, text);
 
 	}

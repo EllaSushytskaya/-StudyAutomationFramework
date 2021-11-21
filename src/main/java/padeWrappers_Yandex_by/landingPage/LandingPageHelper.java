@@ -6,7 +6,9 @@ import common.driver.Waiter;
 import io.qameta.allure.Step;
 import logerator.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.testng.Assert;
+import padeWrappers_Yandex_by.disk.DiskPage;
+import padeWrappers_Yandex_by.disk.DiskPageHelper;
 
 
 public class LandingPageHelper {
@@ -43,6 +45,8 @@ public class LandingPageHelper {
 			AreaInboxHelper.saveDisk();
 			AreaInboxHelper.waitUntilAreaDownloadDiskVisible();
 			HeaderPanelHelper.openDisk();
+			DiskPageHelper.waitUntilButtonDownload();
+			Assert.assertTrue(DiskPage.getOpenDownloadButton().getElement().isDisplayed(),"Disk is not open");
 			Logger.getLogger().info("Save download file and save to disk");
 		}
 	}
@@ -61,7 +65,6 @@ public class LandingPageHelper {
 		@Step("Open form write mail")
 		public static void openFormWriteMail() {
 			Logger.getLogger().info("Try open form write mail");
-			waitUntilOpenedFormMail();
 			openMail();
 			Logger.getLogger().info("Open form write mail");
 		}

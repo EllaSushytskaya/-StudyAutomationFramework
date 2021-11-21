@@ -17,6 +17,7 @@ public class DiskPage {
 	private static final By CONTEXT_FILE_LOCATOR = By.xpath("(//div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")])[1]");
 	private static final By FILE_TO_MOVE_LOCATOR = By.xpath("//div[contains(@class, \"listing-item listing-item_theme_tile listing-item_size_m listing-item_type_file js-prevent-deselect\")]");
 
+
 	public static Button getDownloadFile() {
 		return new Button(DOWNLOAD_FILE_LOCATOR);
 	}

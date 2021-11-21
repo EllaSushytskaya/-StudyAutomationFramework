@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class FileManager {
 
-	public static File generateFile() {
+	public static File createFile() {
 		File file = new File(generateFileName().concat(".txt"));
 		return file;
 	}
