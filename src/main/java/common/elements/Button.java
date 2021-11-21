@@ -15,9 +15,4 @@ public class Button extends HtmlElement {
 		getElement().click();
 	}
 
-	public void rightClick() {
-		Actions actions = new Actions(UiDriver.getDriver());
-		actions.contextClick((WebElement) locator).build().perform();
-
-	}
 }

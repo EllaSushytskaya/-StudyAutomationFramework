@@ -5,28 +5,27 @@ import common.driver.UiDriver;
 import common.driver.Waiter;
 import io.qameta.allure.Step;
 import logerator.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+
 
 
 public class LandingPageHelper {
 	public static class AreaInboxHelper {
 		@Step("Save file on disk")
 		public static void saveDisk() {
-			WebElement elements = UiDriver.getDriver().findElement(By.xpath("(//a[contains(@class, \"mail-File-Actions-Item js-skip-click-message-item js-attachment-actions-item js-show-save-popup mail-File-Actions-Item_secondary\")])[1]"));
+			//WebElement elements = UiDriver.getDriver().findElement(By.xpath("(//a[contains(@class, \"mail-File-Actions-Item js-skip-click-message-item js-attachment-actions-item js-show-save-popup mail-File-Actions-Item_secondary\")])[1]"));
 			JavascriptExecutor executor = (JavascriptExecutor) UiDriver.getDriver();
-			executor.executeScript("arguments[0].click();", elements);
+			executor.executeScript("arguments[0].click();", LandingPage.AreaDownload.getSaveOnDisk().getElement());
 		}
 
 
 		@Step("Wait until area inbox download file")
 		public static void waitUntilAreaInboxVisibility() {
-			Waiter.untilPresenceOfElementLocated(LandingPage.AreaDownload.getSaveOnDisk(), "File not download");
+			Waiter.untilPresenceOfElementLocated(LandingPage.AreaDownload.getSaveOnDiskButton(), "Area not download");
 		}
 		@Step("Wait until area inbox download file")
 		public static void waitUntilAreaDownloadDiskVisible() {
-			Waiter.untilPresenceOfElementLocated(LandingPage.AreaDownload.getDownloadDisk(), "Area not download");
+			Waiter.untilInVisable(LandingPage.AreaDownload.getDownloadDisk(), "Area not download");
 		}
 
 
@@ -42,6 +41,7 @@ public class LandingPageHelper {
 			Logger.getLogger().info("Try save download file and save to disk");
 			AreaInboxHelper.waitUntilAreaInboxVisibility();
 			AreaInboxHelper.saveDisk();
+			AreaInboxHelper.waitUntilAreaDownloadDiskVisible();
 			HeaderPanelHelper.openDisk();
 			Logger.getLogger().info("Save download file and save to disk");
 		}

@@ -26,7 +26,7 @@ public class LoginFormHelper {
 		LoginForm.getSignInButton().click();
 	}
 	@Step("Wait until open landing page")
-	public static void waitUntilOpened() {
+	public static void waitUntilOpenedFormPassword() {
 		Waiter.untilVisable(LoginForm.LoginFormPassword.getOpenLoginFormPasswordButton(), "Page was not opened");
 	}
 
@@ -36,7 +36,7 @@ public class LoginFormHelper {
 		openMail();
 		fillUsername(userName);
 		submitForm();
-		waitUntilOpened();
+		waitUntilOpenedFormPassword();
 		fillPassword(password);
 		submitForm();
 		Logger.getLogger().info("Logged in as {}/{}", userName, password);

@@ -9,7 +9,7 @@ import java.time.Duration;
 
 
 public class Waiter {
-	private static final int defaultWaitTimeInSecond = 10;
+	private static final int defaultWaitTimeInSecond = 15;
 
 	public static void untilVisable(HtmlElement element, String message) {
 		new WebDriverWait(UiDriver.getDriver(), Duration.ofSeconds(defaultWaitTimeInSecond))

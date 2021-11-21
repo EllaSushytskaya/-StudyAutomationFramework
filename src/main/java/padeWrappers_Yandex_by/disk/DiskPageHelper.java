@@ -2,12 +2,11 @@ package padeWrappers_Yandex_by.disk;
 
 import common.driver.UiDriver;
 import common.driver.Waiter;
-import common.elements.HtmlElement;
 import io.qameta.allure.Step;
 import logerator.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+
 
 
 
@@ -23,12 +22,14 @@ public class DiskPageHelper {
 		Waiter.untilVisable(DiskPage.getOpenDownloadButton(), "Download not open");
 	}
 
+
 	@Step("Open context menu")
-	public static void doRightClick() {
-		WebElement element = UiDriver.getDriver().findElement(By.xpath("(//div[contains(@class, \"listing-item__icon listing-item__icon_type_icon listing-item__icon_resource_file\")])[1]"));
+	public static void doRightClick(WebElement element) {
 		Actions actions = new Actions(UiDriver.getDriver());
-		actions.contextClick(element).build().perform();
+		actions.contextClick(DiskPage.getContextMenu().getElement()).build().perform();
 	}
+
+
 
 	@Step("Wait until download ")
 	public static void waitUntilDownloadFile() {
@@ -56,7 +57,7 @@ public class DiskPageHelper {
 		DiskPageHelper.waitUntilButtonDownload();
 		DiskPageHelper.openDownload();
 		DiskPageHelper.waitUntilDownloadFile();
-		DiskPageHelper.doRightClick();
+		DiskPageHelper.doRightClick(DiskPage.getContextMenu().getElement());
 		DiskPageHelper.moveToFile();
 		DiskPageHelper.waitUntilButtonMoveVisibility();
 		DiskPageHelper.moveToFileInPackageFile();
@@ -80,10 +81,8 @@ public class DiskPageHelper {
 	}
 	@Step("Open context menu")
 	public static void relocateFileInBasket() {
-		WebElement element = UiDriver.getDriver().findElement(By.xpath("//div[contains(@class, \"listing-item listing-item_theme_tile listing-item_size_m listing-item_type_file js-prevent-deselect\")]"));
-		WebElement elementBasket = UiDriver.getDriver().findElement(By.xpath("//div[contains(@class, \"listing-item listing-item_theme_tile listing-item_size_m listing-item_type_dir js-prevent-drag js-prevent-deselect\")]"));
 		Actions actions = new Actions(UiDriver.getDriver());
-		actions.dragAndDrop(element,elementBasket).build().perform();
+		actions.dragAndDrop(DiskPage.getFileToMove().getElement(),DiskPage.getBasket().getElement() ).build().perform();
 	}
 	@Step("Open basket")
 	public static void openBasket() {
@@ -93,11 +92,13 @@ public class DiskPageHelper {
 
 	@Step("Open package file and delete file in basket")
 	public static void openPackageFileAndDeleteFileInBasket() {
+		Logger.getLogger().info("Try open package file and delete file");
 		DiskPageHelper.waitUntilOpenFile();
 		DiskPageHelper.openPackageFile();
 		DiskPageHelper.waitUntilFileVisibleInPackageFile();
 		DiskPageHelper.relocateFileInBasket();
 		DiskPageHelper.openBasket();
+		Logger.getLogger().info("Open package file and delete file");
 	}
 
 }

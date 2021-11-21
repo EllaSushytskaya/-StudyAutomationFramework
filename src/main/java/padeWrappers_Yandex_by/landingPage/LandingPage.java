@@ -1,6 +1,7 @@
 package padeWrappers_Yandex_by.landingPage;
 
 import common.elements.Button;
+import common.elements.HtmlElement;
 import org.openqa.selenium.By;
 
 
@@ -9,10 +10,13 @@ public class LandingPage {
 
 	public static class AreaDownload {
 		private static final By SAVE_ON_DISK_BUTTON_LOCATOR = By.xpath("(//a[contains(@class, \"mail-File-Actions-Item js-skip-click-message-item js-attachment-actions-item js-show-save-popup mail-File-Actions-Item_secondary\")])[1]");
-		private static final By AREA_DOWNLOAD_DISK_LOCATOR = By.xpath("//div[contains(@class, \"_nb-popup-content\")]");
+		private static final By AREA_DOWNLOAD_DISK_LOCATOR = By.xpath("//div[contains(@class, \"_2w_-DTDQwXmZILS_a2JLE0\")]");
 
-		public static Button getSaveOnDisk() {
+		public static Button getSaveOnDiskButton() {
 			return new Button(SAVE_ON_DISK_BUTTON_LOCATOR);
+		}
+		public static HtmlElement getSaveOnDisk() {
+			return new HtmlElement(SAVE_ON_DISK_BUTTON_LOCATOR);
 		}
 		public static Button getDownloadDisk() {
 			return new Button(AREA_DOWNLOAD_DISK_LOCATOR);
